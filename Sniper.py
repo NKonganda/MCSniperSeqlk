@@ -16,15 +16,15 @@ class GUI:
         self.we = Button(window, text='Block Method', command=GUI.buildtoken)
         self.we.place(x=90, y=120)
 
-        self.we2 = Button(window, text='Namechange Method', command=GUI.buildname)
-        self.we2.place(x=200, y=120)
+        self.insert_info = Button(window, text='Namechange Method', command=GUI.buildname)
+        self.insert_info.place(x=200, y=120)
 
         self.sm = Button(window, text='Quit Program', command=sys.exit)
         self.sm.place(x=155, y=300)
 
     # Build the menu
     def buildname():
-        global A1, A2, A3, A4, E1, E2, E3, E4, we2, P, E6, E7, PP
+        global target, bearer_key, username, password, target_button, bearer_key_button, username_button, password_button, insert_info, availability_time, availability, run_before, run_before_button
 
         try:
             GUI.removethis1()
@@ -38,44 +38,44 @@ class GUI:
             GUI.removebegin()
         except Exception:
             pass
-        A1 = Label(window, text='Target')
-        A1.place(x=10, y=180)
-        E1 = Entry(window, bd=5)
-        E1.place(x=10, y=200)
+        target = Label(window, text='target')
+        target.place(x=10, y=180)
+        target_button = Entry(window, bd=5)
+        target_button.place(x=10, y=200)
 
-        A2 = Label(window, text='Bearer Key')
-        A2.place(x=250, y=180)
-        E2 = Entry(window, bd=5)
-        E2.place(x=250, y=200)
+        bearer_key = Label(window, text='Bearer Key')
+        bearer_key.place(x=250, y=180)
+        bearer_key_button = Entry(window, bd=5)
+        bearer_key_button.place(x=250, y=200)
 
-        A3 = Label(window, text='Username')
-        A3.place(x=10, y=260)
-        E3 = Entry(window, bd=5)
-        E3.place(x=10, y=280)
+        username = Label(window, text='Username')
+        username.place(x=10, y=260)
+        username_button = Entry(window, bd=5)
+        username_button.place(x=10, y=280)
 
-        A4 = Label(window, text='Password')
-        A4.place(x=250, y=260)
-        E4 = Entry(window, bd=5)
-        E4.place(x=250, y=280)
+        password = Label(window, text='Password')
+        password.place(x=250, y=260)
+        password_button = Entry(window, bd=5)
+        password_button.place(x=250, y=280)
 
-        E6 = Label(window, text='Time of Availability')
-        E6.place(x=10, y=340)
-        P = Entry(window, bd=5)
-        P.place(x=10, y=360)
-        P.insert(0, dt.datetime.now().strftime("%H:%M:%S"))
+        availability = Label(window, text='Time of Availability')
+        availability.place(x=10, y=340)
+        availability_time = Entry(window, bd=5)
+        availability_time.place(x=10, y=360)
+        availability_time.insert(0, dt.datetime.now().strftime("%H:%M:%S"))
 
-        E7 = Label(window, text='Run Before Release Time')
-        E7.place(x=250, y=340)
-        PP = Entry(window, bd=5)
-        PP.place(x=250, y=360)
-        PP.insert(0, '.935')
+        run_before = Label(window, text='Run Before Release Time')
+        run_before.place(x=250, y=340)
+        run_before_button = Entry(window, bd=5)
+        run_before_button.place(x=250, y=360)
+        run_before_button.insert(0, '.935')
 
-        we2 = Button(window, text='Insert Info', command=GUI.insertinfo)
-        we2.place(x=165, y=200)
+        insert_info = Button(window, text='Insert Info', command=GUI.insertinfo)
+        insert_info.place(x=165, y=200)
 
     # Build the menu
     def buildtoken():
-        global C1, W1, C2, W2, we3, Z1, P1, PP, W3
+        global target, target_button, bearer_key, bearer_key_button, insert_info, availability, availability_time, run_before_button, run_before
 
         try:
             GUI.removethis1()
@@ -89,58 +89,58 @@ class GUI:
             GUI.removebegin()
         except Exception:
             pass
-        C1 = Label(window, text='Target')
-        C1.place(x=10, y=180)
-        W1 = Entry(window, bd=5)
-        W1.place(x=10, y=200)
+        target = Label(window, text='target')
+        target.place(x=10, y=180)
+        target_button = Entry(window, bd=5)
+        target_button.place(x=10, y=200)
 
-        C2 = Label(window, text='Bearer Key')
-        C2.place(x=250, y=180)
-        W2 = Entry(window, bd=5)
-        W2.place(x=250, y=200)
+        bearer_key = Label(window, text='Bearer Key')
+        bearer_key.place(x=250, y=180)
+        bearer_key_button = Entry(window, bd=5)
+        bearer_key_button.place(x=250, y=200)
 
-        Z1 = Label(window, text='Time of Availability')
-        Z1.place(x=10, y=340)
-        P1 = Entry(window, bd=5)
-        P1.place(x=10, y=360)
-        P1.insert(0, dt.datetime.now().strftime("%H:%M:%S"))
+        availability = Label(window, text='Time of Availability')
+        availability.place(x=10, y=340)
+        availability_time = Entry(window, bd=5)
+        availability_time.place(x=10, y=360)
+        availability_time.insert(0, dt.datetime.now().strftime("%H:%M:%S"))
 
-        W3 = Label(window, text='Run Before Release Time')
-        W3.place(x=250, y=340)
-        PP = Entry(window, bd=5)
-        PP.place(x=250, y=360)
-        PP.insert(0, '.935')
+        run_before = Label(window, text='Run Before Release Time')
+        run_before.place(x=250, y=340)
+        run_before_button = Entry(window, bd=5)
+        run_before_button.place(x=250, y=360)
+        run_before_button.insert(0, '.935')
 
-        we3 = Button(window, text='Insert Info', command=GUI.insertinfotoken)
-        we3.place(x=165, y=200)
+        insert_info = Button(window, text='Insert Info', command=GUI.insertinfotoken)
+        insert_info.place(x=165, y=200)
 
     # Removes menu of NameChange Method
     def removethis1():
-        A1.destroy()
-        E1.destroy()
-        A2.destroy()
-        E2.destroy()
-        A3.destroy()
-        E3.destroy()
-        A4.destroy()
-        E4.destroy()
-        we2.destroy()
-        E6.destroy()
-        P.destroy()
-        E7.destroy()
-        PP.destroy()
+        target.destroy()
+        target_button.destroy()
+        bearer_key.destroy()
+        bearer_key_button.destroy()
+        username.destroy()
+        username_button.destroy()
+        password.destroy()
+        password_button.destroy()
+        insert_info.destroy()
+        availability.destroy()
+        availability_time.destroy()
+        run_before.destroy()
+        run_before_button.destroy()
 
     # Removes menu of Blank Method
     def removethis2():
-        C1.destroy()
-        W1.destroy()
-        we3.destroy()
-        W2.destroy()
-        C2.destroy()
-        P1.destroy()
-        Z1.destroy()
-        PP.destroy()
-        W3.destroy()
+        target.destroy()
+        target_button.destroy()
+        insert_info.destroy()
+        bearer_key_button.destroy()
+        bearer_key.destroy()
+        availability_time.destroy()
+        availability.destroy()
+        run_before_button.destroy()
+        run_before.destroy()
 
     # Removes the begin button
     def removebegin():
@@ -151,24 +151,24 @@ class GUI:
         global username, password, profileid, auth, we
 
         # Inputs
-        username = E1.get()  # Target
+        username = target_button.get()  # target
 
-        toke = E2.get()  # Bearer Key
+        toke = bearer_key_button.get()  # Bearer Key
 
         try:
-            ff = E3.get()
+            ff = username_button.get()
             us = req = requests.get(f'https://api.mojang.com/user/profile/agent/minecraft/name/{ff}').json()
             profileid = us['id']  # Profile ID / Trimmed UUID
         except Exception:
             print("That username that doesn't exist!")
             profileid = ''
-        password = E4.get()  # Password
+        password = password_button.get()  # Password
 
         auth = 'Bearer ' + toke
 
         # Don't have empty lines
         if username == '':
-            print('Missing Target Username!')
+            print('Missing target Username!')
         elif toke == '':
             print('Missing Bearer Key!')
         elif profileid == '':
@@ -184,15 +184,15 @@ class GUI:
         global target, auth, we
 
         # Inputs
-        target = W1.get()  # Target
+        target = target_button.get()  # target
 
-        token = W2.get()  # Bearer Key
+        token = bearer_key_button.get()  # Bearer Key
 
         auth = 'Bearer ' + token
 
         # Don't have empty lines
         if target == '':
-            print('Missing Target Username!')
+            print('Missing target Username!')
         elif token == '':
             print('Missing Bearer Key!')
         else:
@@ -202,7 +202,7 @@ class GUI:
     # Change the name
     def name():
         try:
-            TimeOfAvailability = P.get()
+            TimeOfAvailability = availability_time.get()
             h = TimeOfAvailability.split(':')[0]
             m = TimeOfAvailability.split(':')[1]
             s = TimeOfAvailability.split(':')[2]
@@ -236,10 +236,10 @@ class GUI:
                 now = dt.datetime.now().strftime("%H:%M:%S")
 
                 if now == date:
-                    if '.' in PP.get():
-                        time.sleep(float(PP.get()))
+                    if '.' in run_before_button.get():
+                        time.sleep(float(run_before_button.get()))
                     else:
-                        time.sleep(int(PP.get()))
+                        time.sleep(int(run_before_button.get()))
                     # Change the username
                     for i in range(3):
                         s = requests.post(f'https://api.mojang.com/user/profile/{profileid}/name',
@@ -258,7 +258,7 @@ class GUI:
     # Block the name
     def block():
         try:
-            TimeOfAvailability = P1.get()
+            TimeOfAvailability = availability_time.get()
             h = TimeOfAvailability.split(':')[0]
             m = TimeOfAvailability.split(':')[1]
             s = TimeOfAvailability.split(':')[2]
@@ -289,10 +289,10 @@ class GUI:
             while True:
                 now = dt.datetime.now().strftime("%H:%M:%S")
                 if now == date:
-                    if '.' in PP.get():
-                        time.sleep(float(PP.get()))
+                    if '.' in run_before_button.get():
+                        time.sleep(float(run_before_button.get()))
                     else:
-                        time.sleep(int(PP.get()))
+                        time.sleep(int(run_before_button.get()))
                     for i in range(3):
                         r = requests.put(f'https://api.mojang.com/user/profile/agent/minecraft/name/{target}',
                                          headers={'Authorization': auth, 'User-Agent': useragent})
@@ -316,7 +316,7 @@ window.title('Minecraft NameSniper')
 window.geometry("400x400")
 window.resizable(0, 0)
 
-G2 = Label(window, text="Seqlk's Sniper", font=32)
+G2 = Label(window, text="Seqlk's Sniper", font=50)
 G2.place(x=150, y=35)
 # Run Program
 root = GUI(window)
